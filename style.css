@@ -1,0 +1,207 @@
+.body
+{
+    padding: 0;
+    margin: 0;
+}
+
+.header
+{
+    margin-top: 50px;
+    padding: 50px 50px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.label
+{
+    height: 25px;
+    width: 50px;
+    background-color: #111;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    float: left;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+}
+
+.checkbox
+{
+    opacity: 0;
+    position: absolute;
+}
+
+
+.ball
+{
+    width: 22px;
+    height: 21px;
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.1s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+
+.fa-moon
+{
+    color: #f1c40f
+}
+
+.fa-sun
+{
+    color:#f39c12
+}
+
+
+.origin-text
+{
+    margin-top: 10px;
+    padding: 20px 20px;
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+}
+
+.text
+{
+    margin: 0;
+}
+
+.timer-wrapper
+{
+    padding: 5px;
+    letter-spacing: 2px;
+    align-content: center;
+    border-radius: 10px;
+    background-color: orange;
+}
+
+.timer
+{
+    margin-left: 8px;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-primary
+{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.text-wrapper
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 10px solid blueviolet;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+#textArea
+{
+    width: 100%;
+}
+
+
+body.dark
+{
+    background-color: #292C35
+}
+
+body.dark textarea
+{
+    background-color: #292C35;
+    color: white;
+}
+
+@media all and (max-width: 550px)
+{
+    #description
+    {
+        display: none;
+    }
+    .timer-wrapper
+    {
+        width: 200px;
+    }
+
+    .timer
+    {
+        margin-left: 8px;
+        font-size: 2.5em;
+    }
+
+    #reset
+    {
+        font-size: 2.5em;
+    }
+}
+
+@media all and (max-width: 440px)
+{
+    .header
+    {
+        margin-top: 10px;
+    }
+
+    .timer-wrapper
+    {
+        width: 170px
+    }
+
+    .timer
+    {
+        font-size: 2em;
+    }
+
+    #reset
+    {
+        width: 130px;
+        height: 100px;
+        font-size: 1.8rem;
+    }
+}
+
+@media all and (max-width: 370px)
+{
+    .header
+    {
+        margin-top: 10px;;
+    }
+
+    #game_title
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .timer-wrapper
+    {
+        width: 120px;
+    }
+
+    .timer
+    {
+        font-size: 1.3em;
+    }
+
+    #reset
+    {
+        width: 100px;
+        height: 70px;
+        font-size: 1rem;
+    }
+}
