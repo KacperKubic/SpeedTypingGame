@@ -23,28 +23,24 @@ let interval;
 let givenText;
 let timeRunning = false;
 
-
-function displayText()
-{
+//Display random quote from quotes array
+function displayText(){
     givenText = quotes[Math.floor(Math.random() * quotes.length)];
     text.innerHTML = givenText;  
 }
 
 
-
-function leadingZeros(time)
-{
-    if(time <= 9)
-    {
+//Add leading zeros in time if the time value is lower then 10. For example: 7 seconds will be displayed as "07"
+function leadingZeros(time){
+    if(time <= 9){
         time = '0' + time;
     }
 
     return time;
 }
 
-
-function runTimer()
-{
+//Create and run timer
+function runTimer(){
     let time = leadingZeros(timer[0]) + ':' + leadingZeros(timer[1]) + ':' + leadingZeros(timer[2]);
     theTimer.innerHTML = time;
     timer[3]++;
@@ -54,9 +50,8 @@ function runTimer()
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
 }
 
-
-function reset()
-{
+//Set the game to its default state
+function reset(){
     clearInterval(interval);
     interval = null;
     timer = [0, 0, 0, 0];
@@ -69,35 +64,35 @@ function reset()
 }
 
 
-
-function start()
-{
+//Run timer when user starts typing
+function start(){
     let textEnteredLength = textArea.value.length;
-    if(textEnteredLength === 0)
-    {
+    if(textEnteredLength === 0){
         timeRunning = true;
         interval = setInterval(runTimer, 10);
     }
-
 }
 
 
-
-function check()
-{
+//Function that check the game state
+function check(){
     let textEntered = textArea.value;
     let givenTextCorrect = givenText.substring(0, textEntered.length);
-    
+
+    //If text entered by player is equal to given text end the game and stop the timer
     if(textEntered === givenText)
     {
         textWrapper.style.borderColor = 'orange';
         clearInterval(interval);
 
     }else{
+        //If user is typing corectly set border color to green
         if(textEntered == givenTextCorrect)
         {
             textWrapper.style.borderColor = 'green';
-        }else{
+        }
+        //If user make a mistake set border color to red
+        else{
             textWrapper.style.borderColor = 'red';
         }
     }
